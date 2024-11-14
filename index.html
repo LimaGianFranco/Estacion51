@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+  <title>Estacion51</title>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2C3E50;
+      color: white;
+      padding-top: 30px;
+    }
+    .modal-content {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border-radius: 15px;
+      border: none;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      background-image: url('imagenes/fondo\ bienvenida.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .modal-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    .modal-body {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    .modal-footer {
+      justify-content: center;
+      border-top: none;
+    }
+    .btn-primary {
+      background-color: #3498DB;
+      border-color: #2980B9;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #2980B9;
+      border-color: #1D6B88;
+    }
+    .modal-dialog {
+      max-width: 500px;
+      margin: 150px auto;
+    }
+    .menu-text {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem; /* Tamaño de letra grande */
+      color: #F39C12; /* Color dorado para destacar */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para mayor visibilidad */
+    }
+
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #E74C3C; /* Un rojo vibrante */
+    }
+
+    .hamburguesa {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+    }
+
+    .textoBurguer {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="welcomeModalLabel">¡Bienvenido a Estación51!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¡Disfruta de nuestros productos y vive una experiencia deliciosa!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      if (!localStorage.getItem('modalShown')) {
+        var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+        myModal.show();
+      }
+    }
+  </script>
+
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <a class="navbar-brand" href="#">
+      <img src="imagenes/logo.jpeg" alt="Logo" class="logo" />
+    </a>
+    <span class="navbar-text menu-text mx-3">MENU</span>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="index.html">Comida</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="html/bebidas.html">Bebida</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h2>Hamburguesas</h2>
+  <section class="card-container">
+    <div class="card-burguer">
+      <img src="./imagenes/burguer simple.png" alt="Hamburguesa">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Burger Simple</h5>
+        <p class="textoBurguer">Sencilla pero deliciosa</p>
+        <ul class="list-group">
+          <li class="list-group-item">150gr de carne</li>
+          <li class="list-group-item">Lechuga</li>
+          <li class="list-group-item">Tomate</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-burguer">
+      <img src="./imagenes/buerguer completa.png" alt="Hamburguesa">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Burger Completa</h5>
+        <p class="textoBurguer">Todo el sabor que puedes encontrar</p>
+        <ul class="list-group">
+          <li class="list-group-item">150gr de carne</li>
+          <li class="list-group-item">Lechuga</li>
+          <li class="list-group-item">Tomate</li>
+          <li class="list-group-item">Queso</li>
+          <li class="list-group-item">Paleta</li>
+          <li class="list-group-item">Huevo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-burguer">
+      <img src="./imagenes/chedar.jpeg" alt="Hamburguesa">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Burger Cheddar</h5>
+        <p class="textoBurguer">Un buen queso siempre va bien con una hamburguesa</p>
+        <ul class="list-group">
+          <li class="list-group-item">150gr de carne</li>
+          <li class="list-group-item">Queso Cheddar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <h2>Pizzas</h2>
+  <section class="card-container">
+    <div class="card-burguer">
+      <img src="./imagenes/pizza muzza.jpg" alt="Pizza">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Pizza Muzza</h5>
+        <p class="textoBurguer">Sencilla pero deliciosa</p>
+        <ul class="list-group">
+          <li class="list-group-item">250gr de mozzarella</li>
+          <li class="list-group-item">Aceitunas</li>
+          <li class="list-group-item">Orégano</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-burguer">
+      <img src="./imagenes/pizza napolitana.webp" alt="Pizza">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Pizza Napolitana</h5>
+        <p class="textoBurguer">Todo el sabor que puedes encontrar</p>
+        <ul class="list-group">
+          <li class="list-group-item">250gr de mozzarella</li>
+          <li class="list-group-item">Tomate</li>
+          <li class="list-group-item">Aceitunas</li>
+          <li class="list-group-item">Orégano</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-burguer">
+      <img src="./imagenes/pizza caballo.jpeg" alt="Pizza">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Pizza a Caballo</h5>
+        <p class="textoBurguer">Un buen queso siempre va bien con una pizza</p>
+        <ul class="list-group">
+          <li class="list-group-item">250gr de mozzarella</li>
+          <li class="list-group-item">Papas fritas</li>
+          <li class="list-group-item">Huevo</li>
+          <li class="list-group-item">Aceitunas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <h2>Papas</h2>
+  <section class="card-container">
+    <div class="card-burguer">
+      <img src="./imagenes/cono de papa.jpg" alt="Papas">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Cono de Papas Fritas</h5>
+        <p class="textoBurguer">Sencilla pero deliciosa</p>
+      </div>
+    </div>
+
+    <div class="card-burguer">
+      <img src="./imagenes/papa con cheddar.jpg" alt="Papas">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Papas con Cheddar</h5>
+        <p class="textoBurguer">Todo el sabor que puedes encontrar</p>
+        <ul class="list-group">
+          <li class="list-group-item">Papas fritas</li>
+          <li class="list-group-item">Queso Cheddar</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-burguer">
+      <img src="./imagenes/papa cheddar panceta verdeo.jpg" alt="Papas">
+      <div class="contenedorBurguer">
+        <h5 class="hamburguesa">Papas con Cheddar, Panceta y Verdeo</h5>
+        <p class="textoBurguer">Un buen queso siempre va bien con las papas</p>
+        <ul class="list-group">
+          <li class="list-group-item">Papas fritas</li>
+          <li class="list-group-item">Queso Cheddar</li>
+          <li class="list-group-item">Panceta</li>
+          <li class="list-group-item">Verdeo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
